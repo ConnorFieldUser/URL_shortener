@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for user in object_list %}
+  <div class="panel panel-default">
+  <div class="panel-body">
+    <a href="#">{{ user.username }}</a>
+    <a href="{% url 'user_detail_view' user.id %}"> {{ user.username }}</a>
+    <p style="color: orange">
+      {{ user.username }}
+    </p>
+  </div>
+  </div>
+
+
+    {% endfor %}
+    {% endblock %}
