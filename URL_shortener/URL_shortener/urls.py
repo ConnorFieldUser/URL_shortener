@@ -26,6 +26,5 @@ urlpatterns = [
     url(r'^create_user/$', UserCreateView.as_view(), name="user_create_view"),
     url(r'^users/$', UserListView.as_view(), name="user_list_view"),
     url(r'^users/(?P<pk>\d+)/$', UserDetailView.as_view(), name="user_detail_view"),
-    url(r'^P<new_url>/w+)/$')
-    # (?P<short_url>\w+)
+    # url(r'^(?P<new_url>\w+)/$')
 ]

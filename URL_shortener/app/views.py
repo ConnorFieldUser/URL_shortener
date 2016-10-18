@@ -34,20 +34,18 @@ class UserListView(ListView):
 class UserDetailView(ListView):
     model = User
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["bookmark_list"] = Bookmark.objects.all()
+        return context
 
-def get_context_data(self, **kwargs):
-    context = super().get_context_data(**kwargs)
-    context["bookmark_list"] = Bookmark.objects.all()
-    return context
+    def form_valid(self, form):
+        instance = form.save(commit=False)
+        instance.user = self.request.user
+        instance.new_url = ""
+        # for i in range(8):
 
-def form_valid(self, form):
-    instance = form.save(commit=False)
-    instance.user = self.request.user
-    instance.new_url = ""
-    for i in range(8)
-
-
-def ShortView(View):
-    def get(self, request, new_url):
-        full = Bookmark.objects.get(new_url=new_url)
-        return HttpResponseRedirect(full.url)
+    def ShortView(View):
+        def get(self, request, new_url):
+            full = Bookmark.objects.get(new_url=new_url)
+            return HttpResponseRedirect(full.url)
