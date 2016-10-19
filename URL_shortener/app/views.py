@@ -11,6 +11,9 @@ from django.views.generic import ListView
 
 from django.http import HttpResponseRedirect
 
+from django.utils.crypto import get_random_string
+# get_random_string(length=x)
+
 # Create your views here.
 
 
