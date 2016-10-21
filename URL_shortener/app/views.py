@@ -12,7 +12,6 @@ from django.views.generic import ListView
 from django.http import HttpResponseRedirect
 
 from django.utils.crypto import get_random_string
-# get_random_string(length=x)
 
 # Create your views here.
 
@@ -46,7 +45,7 @@ class UserDetailView(ListView):
         instance = form.save(commit=False)
         instance.user = self.request.user
         instance.new_url = ""
-        # for i in range(8):
+        get_random_string(length=6)
 
     def ShortView(View):
         def get(self, request, new_url):
