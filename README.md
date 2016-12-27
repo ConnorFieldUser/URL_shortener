@@ -1,2 +1,2 @@
 # URL_shortener
-Bookmark site.
+Will someday be a bookmark site powered by django. Started in week five at The Iron Yard.
